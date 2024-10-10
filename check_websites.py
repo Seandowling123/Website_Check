@@ -8,11 +8,10 @@ from credentials import SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, R
 # Check the website status
 def check_website(website):
     try:
-        response = requests.get(f"http://{website}")
+        response = requests.get(f"https://{website}")
         print(website, response)
         if response.status_code != 200:
             send_alert_email(website, response.status_code)
-        else: send_alert_email(website, response.status_code)
     except requests.exceptions.RequestException as e:
         send_alert_email(str(e))
 
