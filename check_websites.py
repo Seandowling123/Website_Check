@@ -1,3 +1,4 @@
+import time
 import requests
 import smtplib
 from email.mime.text import MIMEText
@@ -32,6 +33,7 @@ def send_alert_email(website, status):
 
 # Entry Point
 if __name__ == "__main__":
+    time.sleep(30)
     websites = ['mariadowlingtherapy.com', 'seand.ie']
     for website in websites:
         check_website(website)
